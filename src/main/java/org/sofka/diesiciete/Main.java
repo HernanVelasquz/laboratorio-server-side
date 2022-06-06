@@ -4,9 +4,10 @@ import org.jboss.logging.Logger;
 import org.sofka.diesies.Persona;
 
 public class Main {
-    private static Logger log = Logger.getLogger(Persona.class);
+    private static Logger log = Logger.getLogger(Main.class);
     public static void main(String[] args) {
         Electrodomestico listaElectrodomesticos[]=new Electrodomestico[10];
+
         listaElectrodomesticos[0]=new Electrodomestico(200, 60, 'C', "Verde");
         listaElectrodomesticos[1]=new Lavadora(150, 30);
         listaElectrodomesticos[2]=new Television(500, 80, 'E', "negro", 42, false);
@@ -23,6 +24,7 @@ public class Main {
         double sumaLavadoras=0;
 
         for(int i=0;i<listaElectrodomesticos.length;i++){
+
             if(listaElectrodomesticos[i] instanceof Electrodomestico){
                 sumaElectrodomesticos+=listaElectrodomesticos[i].precioFinal();
             }
