@@ -1,5 +1,4 @@
 package org.sofka.diesies;
-
 /**
  * Clase que complementa la solucion del ejercicio
  * dieciseis del taller de java
@@ -70,7 +69,7 @@ public class Persona {
 
     /**
      * Metodo encargdo de acer el calculo del peso ideal de la persona
-     * @return
+     * @return el peso ideal de la persona.
      */
     public int calcularIMC() {
         double pesoActual = peso / (Math.pow(altura, 2));
@@ -83,6 +82,10 @@ public class Persona {
         }
     }
 
+    /**
+     * Metodo encargada de decidir si una persona es mayor o menor de edad
+     * @return True o False dependiendo de la evaluacion
+     */
     public boolean esMayorDeEdad() {
         if (this.edad < 18) {
             return false;
@@ -91,11 +94,20 @@ public class Persona {
         }
     }
 
+    /**
+     * Metodo encargada de definir el sexo de una persona,
+     * Si no es valido, asigna el que tiene por defecto el sistema.
+     */
     private void comprobarSexo() {
         if (this.sexo != 'H' || this.sexo != 'M') {
             this.sexo = SEXO_DEF;
         }
     }
+
+    /**
+     * Metodo encargado de realizar el calculo del
+     * DNI, Asignando un numero de 8 digitos.
+     */
     private void generarDNI() {
         final int divisor = 23;
         int numDNI = ((int) Math.floor(Math.random() * (100000000 - 10000000) + 10000000));
@@ -104,6 +116,12 @@ public class Persona {
         DNI = Integer.toString(numDNI) + letraDNI;
     }
 
+    /**
+     * Genera el dni en base al numero que genera el calculo y
+     * le asigna un caracter
+     * @param res es el numero que recibe de generar dni
+     * @return retora la letra seleccionafa pot el metodo anterior.
+     */
     private char generaLetraDNI(int res) {
         char letras[] = {'T', 'R', 'W', 'A', 'G', 'M', 'Y',
                 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z',
@@ -111,6 +129,11 @@ public class Persona {
         return letras[res];
     }
 
+    /**
+     * Metodos para obtener y modificar los datos de
+     * la clase.
+     * @param nombre
+     */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -131,6 +154,10 @@ public class Persona {
         this.altura = altura;
     }
 
+    /**
+     * Metodo encargado de devolver toda la informacion del usuario
+     * @return
+     */
     @Override
     public String toString() {
 
