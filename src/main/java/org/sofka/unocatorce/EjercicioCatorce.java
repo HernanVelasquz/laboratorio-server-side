@@ -20,7 +20,6 @@ public class EjercicioCatorce {
     public static void main(String[] args) {
         numbersIngresado();
     }
-
     private static void numbersIngresado(){
         log.info("Igresar un numero");
         int number = Integer.parseInt(scanner.nextLine());

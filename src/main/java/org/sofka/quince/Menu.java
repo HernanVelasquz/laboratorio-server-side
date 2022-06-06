@@ -1,7 +1,6 @@
 package org.sofka.quince;
 
 import org.jboss.logging.Logger;
-import org.sofka.unocatorce.EjercicioCatorce;
 
 import java.util.Scanner;
 
@@ -14,7 +13,7 @@ import java.util.Scanner;
  */
 public class Menu {
     // Inicializaciones para poder mostrar por consola y recibir los datos, ademas de capturar los datos
-    private static Logger log = Logger.getLogger(EjercicioCatorce.class);
+    private static Logger log = Logger.getLogger(Menu.class);
     private static Scanner scanner = new Scanner(System.in);
 
     /**
@@ -69,7 +68,7 @@ public class Menu {
             case 8:
                 break;
             default:
-                System.out.println("Opcion no valida");
+                log.info("Opcion no valida");
                 start();
                 break;
         }
